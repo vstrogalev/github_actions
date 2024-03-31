@@ -23,6 +23,7 @@ module.exports = {
 		'plugin:eslint-comments/recommended',
 	],
 	rules: {
+		'prettier/prettier': 0,
 		semi: [2, 'always'],
 		quotes: [2, 'single', { avoidEscape: true }],
 		'no-unused-vars': 'off',

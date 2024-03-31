@@ -10,11 +10,11 @@ module.exports = {
 	entry: path.resolve(__dirname, '..', './src/index.tsx'), //точка входа в наше приложение содержит абсолютный путь к index.ts
 	output: {
 		path: path.resolve(__dirname, '..', './dist'), //путь, по которому будет собираться наш проект
-    	filename: production
-	        ? 'static/scripts/[name].[contenthash].js'
-        	: 'static/scripts/[name].js', // имя нашего бандла
-    	publicPath: process.env.PUBLIC_PATH ? process.env.PUBLIC_PATH : '/', // указываем путь, который будет добавляться перед подключением файлов
-    	chunkFilename: 'static/scripts/[name].[contenthash].bundle.js'
+		filename: production
+			? 'static/scripts/[name].[contenthash].js'
+			: 'static/scripts/[name].js', // имя нашего бандла
+		publicPath: process.env.PUBLIC_PATH ? process.env.PUBLIC_PATH : '/', // указываем путь, который будет добавляться перед подключением файлов
+		chunkFilename: 'static/scripts/[name].[contenthash].bundle.js',
 	},
 	//Нужно помочь вебпаку научится работать с jsx и tsx файлами для этого используют ts loader
 	module: {
@@ -80,9 +80,9 @@ module.exports = {
 	},
 	plugins: [
 		new webpack.EnvironmentPlugin({
-            PUBLIC_PATH: null, // значение по умолчанию null, если переменная process.env.PUBLIC_PATH не передана
-            NODE_ENV: 'development', // значение по умолчанию 'development', если переменная process.env.NODE_ENV не передана
-        }),
+			PUBLIC_PATH: null, // значение по умолчанию null, если переменная process.env.PUBLIC_PATH не передана
+			NODE_ENV: 'development', // значение по умолчанию 'development', если переменная process.env.NODE_ENV не передана
+		}),
 		new HTMLWebpackPlugins({
 			template: path.resolve(__dirname, '..', './public/index.html'),
 		}),
